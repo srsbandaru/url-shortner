@@ -1,8 +1,23 @@
+{% extends "base_master.html" %}
 {% block title %}
     URL shortner
 {% endblock title %}
+{% load static %}
 {% block content %}
     <div class="container">
-        <h1>URL shortner</h1>
+        <img class="img-fluid" src="{% static 'shortner/img/url-shortner-logo.png' %}"> 
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="urlInput" class="form-label">Enter URL</label>
+                <input type="url" name="urlInput" class="form-control" id="urlInput" placeholder="https://" required>
+            </div>
+            <button type="submit" class="btn btn-info">Get Short URL</button>
+        </form>
+        {% if short_url %}
+            <div class="alert alert-success mt-3" role="alert">
+                {{short_url}}
+            </div>
+        {% endif %}
     </div>
 {% endblock content %}

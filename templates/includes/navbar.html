@@ -1,0 +1,17 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-primary bg-primary" aria-label="URL Shortner Navbar">
+    <div class="container-fluid">
+        <img src="{% static 'shortner/img/url-shortner-logo.png' %}" alt="" width="150">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" 
+        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shortner:IndexView' %}">Home</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
